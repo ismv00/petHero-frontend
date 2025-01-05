@@ -11,7 +11,7 @@ export default function Profile() {
         <img src={logoImg} alt="Be The HERO" />
         <span>Bem vindo(a), Igor</span>
 
-        <Link className="button" to="incidents/new">
+        <Link className="button" to="/case">
           Cadastrar novo caso
         </Link>
         <button type="submit">

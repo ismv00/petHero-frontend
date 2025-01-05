@@ -26,7 +26,8 @@ export default function Case() {
         <form>
           <input placeholder="Título do caso" />
           <textarea placeholder="Descrição" />
-          <input placeholder="Valor em Reais" />
+          <input placeholder="Porte" />
+          <input placeholder="Foto" />
 
           <button className="button" type="submit">
             Cadastrar
