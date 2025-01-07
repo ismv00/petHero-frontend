@@ -85,3 +85,12 @@
   line-height: 21px;
   font-size: 16px;
 }
+
+.case-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  object-fit: contain;
+}

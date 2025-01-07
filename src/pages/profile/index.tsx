@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { FiPower, FiTrash } from 'react-icons/fi';
 import logoImg from '../../assets/logo.svg';
+import catImg from '../../assets/cat.jpg';
+import dogsImg from '../../assets/dogs.jpg';
 
 import './styles.css';
 
@@ -22,6 +24,7 @@ export default function Profile() {
 
       <ul>
         <li>
+          <img src={catImg} alt="Imagem de teste" className="case-image" />
           <strong>Caso:</strong>
           <p>Thor perdido</p>
 
@@ -30,6 +33,23 @@ export default function Profile() {
 
           <strong>Valor</strong>
           <p>20.00</p>
+
+          <button type="button">
+            <FiTrash size={20} color="#a8a8b3" />
+          </button>
+        </li>
+
+        {/* Exemplo de outro caso */}
+        <li>
+          <img src={dogsImg} alt="Imagem do caso" className="case-image" />
+          <strong>Caso:</strong>
+          <p>Luna encontrada</p>
+
+          <strong>Descrição:</strong>
+          <p>Está com uma nova família.</p>
+
+          <strong>Valor:</strong>
+          <p>0.00</p>
 
           <button type="button">
             <FiTrash size={20} color="#a8a8b3" />
