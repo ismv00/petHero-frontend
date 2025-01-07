@@ -1,6 +1,6 @@
 import logoImg from '../../assets/logo.svg';
 import { Link } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi';
+import { FiArrowLeft, FiTrash } from 'react-icons/fi';
 
 import { useState } from 'react';
 
@@ -16,6 +16,10 @@ export default function Case() {
       const imageUrl = URL.createObjectURL(file);
       setSelectedImage(imageUrl);
     }
+  }
+
+  function handleRemoveImage() {
+    setSelectedImage(null);
   }
 
   return (
@@ -53,6 +57,9 @@ export default function Case() {
             {selectedImage && (
               <div className="image-preview">
                 <img src={selectedImage} alt="Pré-visualização" />
+                <button className="remove-image" onClick={handleRemoveImage}>
+                  <FiTrash size={20} color="#e02041" />
+                </button>
               </div>
             )}
           </div>
