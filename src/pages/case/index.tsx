@@ -2,9 +2,22 @@ import logoImg from '../../assets/logo.svg';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 
+import { useState } from 'react';
+
 import './styles.css';
 
 export default function Case() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  function handleImageChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setSelectedImage(imageUrl);
+    }
+  }
+
   return (
     <div className="case-container">
       <div className="content">
@@ -27,7 +40,22 @@ export default function Case() {
           <input placeholder="Título do caso" />
           <textarea placeholder="Descrição" />
           <input placeholder="Porte" />
-          <input placeholder="Foto" />
+          <div className="image-upload">
+            <label htmlFor="file-upload" className="upload-button">
+              Selecionar Foto
+            </label>
+            <input
+              id="file-upload"
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+            />
+            {selectedImage && (
+              <div className="image-preview">
+                <img src={selectedImage} alt="Pré-visualização" />
+              </div>
+            )}
+          </div>
 
           <button className="button" type="submit">
             Cadastrar
